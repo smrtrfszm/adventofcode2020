@@ -31,8 +31,6 @@ fs.readFileSync('data.txt', { encoding: 'utf8' }).split('\n\n').forEach(x => {
 
   if (k >= 7) p1++
   if (i >= 7) p2++
-
-  return false
 })
 
 console.log(`1. feladat: ${p1}`)
