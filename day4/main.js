@@ -23,7 +23,8 @@ fs.readFileSync('data.txt', { encoding: 'utf8' }).split('\n\n').forEach(x => {
     }
     if (a[0] === 'hcl' && a[1].match(/#[0-9a-f]{6}/)) i++
     if (a[0] === 'ecl') {
-      if (a[1] === 'amb' || a[1] === 'blu' || a[1] === 'brn' || a[1] === 'gry' || a[1] === 'grn' || a[1] === 'hzl' || a[1] === 'oth') i++
+      const colors = ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']
+      if (colors.includes(a[1])) i++
     }
     if (a[0] === 'pid' && a[1].length === 9) i++
   }
