@@ -12,8 +12,8 @@ fs.readFileSync('data.txt', { encoding: 'utf8' }).split('\n\n').forEach(x => {
     if ((x.match(new RegExp(a, 'g')) || []).length === length)
       set2.add(a)
 
-  p1 += Array.from(set).length
-  p2 += Array.from(set2).length
+  p1 += set.size
+  p2 += set2.size
 })
 
 console.log(`1. feladat: ${p1}`)
