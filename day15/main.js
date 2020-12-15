@@ -9,6 +9,7 @@ const add = (p1, a, i) => {
   } else {
     p1.set(a, [null, i])
   }
+  return a
 }
 
 const c = (n) => {
@@ -17,18 +18,15 @@ const c = (n) => {
 
   for (let i = 0; i < n; i++) {
     if (i < data.length) {
-      add(p1, data[i], i + 1)
-      last = data[i]
+      last = add(p1, data[i], i + 1)
       continue
     }
     const a = p1.get(last)
     if (a && a[0] === null) {
-      add(p1, 0, i + 1)
-      last = 0
+      last = add(p1, 0, i + 1)
     } else {
       let b = a[1] - a[0]
-      add(p1, b, i + 1)
-      last = b
+      last = add(p1, b, i + 1)
     }
   }
 
