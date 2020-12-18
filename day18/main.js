@@ -32,7 +32,7 @@ const solve2 = (input) => {
     }
 
     const solution = solve(matches[0])
-    const find = matches[0].replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')
+    const find = matches[0].replace(/[()*+]/g, '\\$&')
     a = a.replace(new RegExp(find), solution)
   }
 
@@ -44,7 +44,7 @@ let p2 = 0
 
 for (let i = 0; i < data.length; i++) {
   while (true) {
-    const a = data[i].match(/\(([^()]+)\)/g)
+    const a = data[i].match(/\([^()]+\)/g)
     if (!a) break
     for (const b of a) {
       const solution = solve(b)
@@ -57,7 +57,7 @@ for (let i = 0; i < data.length; i++) {
 
 for (let i = 0; i < data2.length; i++) {
   while (true) {
-    const a = data2[i].match(/\(([^()]+)\)/g)
+    const a = data2[i].match(/\([^()]+\)/g)
     if (!a) break
     for (const b of a) {
       const solution = solve2(b)
