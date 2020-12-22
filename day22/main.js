@@ -48,7 +48,7 @@ const rec = (cards2) => {
   }
   if (game === 1)
     return cards.filter(x => x.length)[0].reverse().reduce((acc, x, i) => acc + x * (i+1))
-  return (cards[0].length) ? 1 : 0
+  return !!cards[0].length
 }
 
 console.log(`2. feladat: ${rec(data2)}`)
