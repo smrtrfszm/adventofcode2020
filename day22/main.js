@@ -36,7 +36,7 @@ const rec = (cards2) => {
         cards[0].slice(0, p1c),
         cards[1].slice(0, p2c),
       ]
-      winner = rec(newCards, 1)
+      winner = rec(newCards)
     }
     if (winner) {
       cards[0].push(p1c)
